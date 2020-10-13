@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"lastproject/user"
 	"log"
@@ -10,8 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("hello")
-	Template := template.Must(template.ParseGlob("files/var/templates/*"))
+	Template := template.Must(template.ParseGlob("templates/*"))
 	user := user.New(Template)
 
 	http.HandleFunc("/", user.HomeUser)
